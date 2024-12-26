@@ -43,6 +43,9 @@ def simulate_projectile_drag():
     x_values = [x] # will be all the values in parabola that are modified by drag
     y_values = [y] # y - values modified by drag 
 
+    plt.figure(figsize=(10,6))    
+    plt.title(f"Projectile Motion (v={v} m/s, theta = {theta})", fontsize =14)
+    
     # time loop because a lot of variables are dependent upon each other
     while y >= 0:
         v = np.sqrt(vx**2 + vy**2)
@@ -57,9 +60,7 @@ def simulate_projectile_drag():
         
 
 
-    plt.figure(figsize=(10,6))    
     plt.plot(x_values,y_values, label="Projectile Path")
-    plt.title(f"Projectile Motion (v={v} m/s, theta = {theta})", fontsize =14)
     plt.xlabel("Horizontal Distance (m)", fontsize=12)
     plt.ylabel("Vertical Distance (m)", fontsize =12)
     plt.axhline(0, color='black', linewidth=.8, linestyle='--')
